@@ -2,7 +2,6 @@ module.exports = (app) => {
    const bodyParser = require('body-parser');
    
    app.use(bodyParser.urlencoded({ extended: false }))
-   
    app.use(bodyParser.json())
 
    const consign = require('consign');
