@@ -7,7 +7,7 @@ const taskSchema = new Schema({
   title:  String,
   author: String,
   body:   String,
-  comments: [{ body: String, date: Date }],
+  comments: [{ body: String, data: Date }],
   likes: Number,
   endDate: Date
 });

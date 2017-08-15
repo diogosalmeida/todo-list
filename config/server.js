@@ -1,6 +1,7 @@
 module.exports = (app) => {
    const bodyParser = require('body-parser');
-   
+   const moment = require('moment');
+
    app.use(bodyParser.urlencoded({ extended: false }))
    app.use(bodyParser.json())
 
@@ -10,6 +11,8 @@ module.exports = (app) => {
     .include('models')
     .then('controllers')
     .into(app);
+
+    app.set('moment', moment);
 
     //Rotas 
         const indexRouter = require('../app/routes/index')(app)
