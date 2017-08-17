@@ -1,4 +1,4 @@
-module.exports = (app) => {
+module.exports = app => {
     const moment = require('../../helpers/moment');
 
     app.get('/tasks', (req, res) => {
@@ -8,17 +8,35 @@ module.exports = (app) => {
     app.post('/create-task',(req, res) => {
 
        const task = {
-        title : "Levar as crianças na escola",
-        author : "Diogo Almeida",
-        body : "Ao meio dia de hoje terei de levar as crianças na escola",
+        title : req.body.title,
+        author : req.body.author,
+        bodyTask : req.body.bodyTask,
         comments : {
-            body: "Não esquece de pegar o lanche dos muleque",
+            bodyComment: req.body.bodyComment,
             date: moment()
         },
-        likes : 1,
         endDate : moment()
        }
         
-       app.controllers.task.createTask(task, req, res)
+      app.controllers.task.createTask(task, req, res)
     });
+
+
+    app.put('/update-task/:id',(req, res) => {
+
+        let id = req.params.id;
+        
+        const task = {
+            title : req.body.title,
+            author : req.body.author,
+            bodyTask : req.body.bodyTask,
+            comments : {
+                bodyComment: req.body.bodyComment,
+                date: moment()
+            },
+            endDate : moment()
+           }
+
+      app.controllers.task.updateTask(req, res, id, task)
+    })
 }
