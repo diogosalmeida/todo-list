@@ -6,8 +6,8 @@ const Schema = mongoose.Schema;
 const taskSchema = new Schema({
   title:  String,
   author: String,
-  body:   String,
-  comments: [{ body: String, data: Date }],
+  bodyTask:   String,
+  comments: [{ bodyComment: String, data: Date }],
   likes: Number,
   endDate: Date
 });
