@@ -5,7 +5,7 @@ const app = express();
 
 
 
-const ServerConfig =  require('./config/server')(app);
+const ServerConfig = require('./config/server')(app);
 const port = 4000;
 
 
