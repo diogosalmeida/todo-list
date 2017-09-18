@@ -1,7 +1,7 @@
 {
   "name": "todo-list-back",
   "version": "1.0.0",
-  "main": "index.js",
+  "main": "app.js",
   "author": "Diogo Santos Almeida ",
   "license": "MIT",
   "scripts": {
@@ -16,5 +16,8 @@
     "moment": "^2.18.1",
     "mongoose": "^4.11.11",
     "nodemon": "^1.11.0"
+  },
+  "devDependencies": {
+    "@angular/cli": "^1.4.2"
   }
 }

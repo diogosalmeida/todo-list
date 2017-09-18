@@ -9,7 +9,9 @@ const taskSchema = new Schema({
   bodyTask:   String,
   comments: [{ bodyComment: String, data: Date }],
   likes: Number,
-  endDate: Date
+  endDate: Date,
+  status: String,
+  priority: String
 });
 
 const TaksModel = mongoose.model('TaskModel',taskSchema);
